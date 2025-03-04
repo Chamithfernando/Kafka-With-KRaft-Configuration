@@ -1,0 +1,17 @@
+https://kafka.apache.org/quickstart documentation 
+
+Kafka with KRaft
+
+STEP 1
+C:\kafka_2.13-3.9.0> .\bin\windows\kafka-storage.bat random-uuid
+
+STEP 2
+change logs directory C:\kafka_2.13-3.9.0\config\kraft> reconfig-server.properties  -> log.dirs=/tmp/kraft-combined-logs
+or
+change logs directory C:\kafka_2.13-3.9.0\config\kraft> server.properties  -> log.dirs=/tmp/kraft-combined-logs
+
+STEP 3
+C:\kafka_2.13-3.9.0> .\bin\windows\kafka-storage.bat format --standalone -t I9smW93-Q6aiSqP0vshEEQ  -c .\config\kraft\server.properties
+
+STEP 4
+C:\kafka_2.13-3.9.0>.\bin\windows\kafka-server-start.bat .\config\kraft\server.properties 
